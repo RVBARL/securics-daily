@@ -1,0 +1,10 @@
+- name: custom_bucket_defaults
+  description: Custom bucket default configuration
+  configuration_parameters:
+    SQS_NAME: securics-sqs-integration-tests-t1
+  metadata:
+    resource_type: bucket
+    sqs_name: securics-sqs-integration-tests-t1
+    bucket_name: securics-sqs-bucket-integration-test-t1
+    bucket_type: cloudtrail
+    expected_results: 1

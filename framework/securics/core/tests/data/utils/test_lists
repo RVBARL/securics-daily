@@ -1,0 +1,5 @@
+test-securics-w:write
+test-securics-r:read
+test-securics-a:attribute
+test-securics-x:execute
+test-securics-c:command

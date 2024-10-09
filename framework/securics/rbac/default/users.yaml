@@ -1,0 +1,12 @@
+# SECURICS SYSTEM FILE, PLEASE DO NOT MODIFY
+
+default_users:
+  securics:
+    description: Superuser of Securics.
+    password: securics
+    allow_run_as: True
+
+  securics-wui:
+    description: Superuser of Securics UI
+    password: securics-wui
+    allow_run_as: True

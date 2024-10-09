@@ -1,0 +1,3 @@
+
+ Vous êtes sur le point d'installer Securics.
+ Vous devez avoir une compilateur C préinstallé sur votre système.

@@ -1,0 +1,139 @@
+- name: cloudtrail_defaults
+  description: CloudTrail default configurations
+  configuration_parameters:
+    BUCKET_TYPE: cloudtrail
+    BUCKET_NAME: securics-cloudtrail-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: cloudtrail
+    bucket_name: securics-cloudtrail-integration-tests
+
+- name: vpc_defaults
+  description: VPC default configurations
+  configuration_parameters:
+    BUCKET_TYPE: vpcflow
+    BUCKET_NAME: securics-vpcflow-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: vpcflow
+    bucket_name: securics-vpcflow-integration-tests
+
+- name: config_defaults
+  description: Config default configurations
+  configuration_parameters:
+    BUCKET_TYPE: config
+    BUCKET_NAME: securics-config-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: config
+    bucket_name: securics-config-integration-tests
+
+- name: alb_defaults
+  description: ALB default configurations
+  configuration_parameters:
+    BUCKET_TYPE: alb
+    BUCKET_NAME: securics-alb-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: alb
+    bucket_name: securics-alb-integration-tests
+
+- name: clb_defaults
+  description: CLB default configurations
+  configuration_parameters:
+    BUCKET_TYPE: clb
+    BUCKET_NAME: securics-clb-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: clb
+    bucket_name: securics-clb-integration-tests
+
+- name: nlb_defaults
+  description: NLB default configurations
+  configuration_parameters:
+    BUCKET_TYPE: nlb
+    BUCKET_NAME: securics-nlb-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: nlb
+    bucket_name: securics-nlb-integration-tests
+
+- name: kms_defaults
+  description: KMS default configurations
+  configuration_parameters:
+    BUCKET_TYPE: custom
+    BUCKET_NAME: securics-kms-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: custom
+    bucket_name: securics-kms-integration-tests
+
+- name: macie_defaults
+  description: CloudTrail default configurations
+  configuration_parameters:
+    BUCKET_TYPE: custom
+    BUCKET_NAME: securics-macie-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: custom
+    bucket_name: securics-macie-integration-tests
+
+- name: trusted_advisor_defaults
+  description: Trusted Advisor default configurations
+  configuration_parameters:
+    BUCKET_TYPE: custom
+    BUCKET_NAME: securics-trusted-advisor-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: custom
+    bucket_name: securics-trusted-advisor-integration-tests
+
+- name: guardduty_defaults
+  description: GuardDuty default configurations
+  configuration_parameters:
+    BUCKET_TYPE: guardduty
+    BUCKET_NAME: securics-guardduty-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: guardduty
+    bucket_name: securics-guardduty-integration-tests
+
+- name: native_guardduty_defaults
+  description: Native GuardDuty default configurations
+  configuration_parameters:
+    BUCKET_TYPE: guardduty
+    BUCKET_NAME: securics-native-guardduty-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: guardduty
+    bucket_name: securics-native-guardduty-integration-tests
+
+- name: waf_defaults
+  description: WAF default configurations
+  configuration_parameters:
+    BUCKET_TYPE: waf
+    BUCKET_NAME: securics-waf-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: waf
+    bucket_name: securics-waf-integration-tests
+
+- name: server_access_defaults
+  description: Server Access default configurations
+  configuration_parameters:
+    BUCKET_TYPE: server_access
+    BUCKET_NAME: securics-server-access-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: server_access
+    bucket_name: securics-server-access-integration-tests
+
+- name: cisco_umbrella_defaults
+  description: Umbrella default configurations
+  configuration_parameters:
+    BUCKET_TYPE: cisco_umbrella
+    BUCKET_NAME: securics-umbrella-integration-tests
+  metadata:
+    resource_type: bucket
+    bucket_type: cisco_umbrella
+    bucket_name: securics-umbrella-integration-tests

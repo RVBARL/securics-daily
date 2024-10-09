@@ -1,0 +1,18 @@
+[Unit]
+Description=Securics manager
+Wants=network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=forking
+LimitNOFILE=65536
+
+ExecStart=/usr/bin/env SECURICS_HOME_TMP/bin/securics-control start
+ExecStop=/usr/bin/env SECURICS_HOME_TMP/bin/securics-control stop
+ExecReload=/usr/bin/env SECURICS_HOME_TMP/bin/securics-control reload
+
+KillMode=process
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

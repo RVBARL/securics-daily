@@ -1,0 +1,22 @@
+SECURICS
+Copyright (C) 2023-2024, RV Bionics Group SpA.
+
+Based on OSSEC
+Copyright (C) 2014 Trend Micro Inc.
+
+
+= Information about Securics =
+
+Visit https://www.rvbionics.com
+
+
+= Recommended Installation =
+
+See INSTALL
+
+
+== Configuring Securics ==
+
+Just follow the steps from the install.sh script.
+More information at
+https://documentation.rvbionics.com

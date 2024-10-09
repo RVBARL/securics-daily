@@ -1,0 +1,9 @@
+- key: securics
+  title: "securics"
+  description: >
+    securics Module
+  fields:
+    - name: securics
+      type: group
+      description: >
+      fields:

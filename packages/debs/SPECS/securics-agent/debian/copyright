@@ -1,0 +1,38 @@
+This work was packaged for Debian by:
+
+    Securics, Inc <info@rvbionics.com> on Thu, 05 Sep 2024 00:00:00 +0000
+
+It was downloaded from:
+
+    https://www.rvbionics.com
+
+Upstream Authors:
+
+    dcid@dcid.me
+    Jia-BingJB_Cheng@trendmicro.com
+    vichargrave@gmail.com
+    ossec@michaelstarks.com
+    ddpbsd@gmail.com
+    scott@atomicorp.com
+    brad.lhotsky@gmail.com
+    jeremy@jeremyrossy.com
+    santiago.bassett@gmail.com
+    pedro@rvbionics.com
+    alberto.rodriguez@rvbionics.com
+    braulio@rvbionics.com
+    jose.fernandez@rvbionics.com
+
+Copyright:
+
+    GNU General Public License version 2.
+
+License:
+
+    GNU General Public License version 2.
+
+The Debian packaging is:
+
+    Copyright (C) 2015 Securics, Inc <info@rvbionics.com>
+
+and is licensed under the GPL version 2,
+see "/usr/share/common-licenses/GPL-2".

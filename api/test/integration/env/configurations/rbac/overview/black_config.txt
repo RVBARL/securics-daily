@@ -1,0 +1,32 @@
+| Group   | Agents                                  |
+|---------|-----------------------------------------|
+| default | 001,002,003,004,005,006,007,008,009,010 |
+| group1  | 001,005,007,008,009                     |
+| group2  | 002,005,006,008,010                     |
+| group3  | 003,006,007,008                         |
+
+| Agent | Name          | Groups                       | Status          |
+|-------|---------------|------------------------------|-----------------|
+| 000   | securics-master  |                              | active          |
+| 001   | securics-agent1  | default,group1               | active          |
+| 002   | securics-agent2  | default,group2               | active          |
+| 003   | securics-agent3  | default,group3               | active          |
+| 004   | securics-agent4  | default                      | active          |
+| 005   | securics-agent5  | default,group1,group2        | active          |
+| 006   | securics-agent6  | default,group2,group3        | active          |
+| 007   | securics-agent7  | default,group1,group3        | active          |
+| 008   | securics-agent8  | default,group1,group2,group3 | active          |
+| 009   | securics-agent9  | default,group1               | disconnected    |
+| 010   | securics-agent10 | default,group2               | disconnected    |
+| 011   | securics-agent11 |                              | never_connected |
+| 012   | securics-agent12 |                              | never_connected |
+
+| Resource    | List                                                |
+|-------------|-----------------------------------------------------|
+| agent:id    | 000,001,002,003,004,005,006,007,008,009,010,011,012 |
+| group:id    | default,group1,group2,group3                        |
+
+
+| Actions                  | Resources | Allow | Deny                        |
+|--------------------------|-----------|-------|-----------------------------|
+| agent:read               | agent:id  |       | 000,002,004,006,008,010,012 |

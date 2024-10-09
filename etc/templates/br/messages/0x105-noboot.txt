@@ -1,0 +1,4 @@
+
+ - Nenhuma ação foi tomada para que Securics inicie
+   durrante o 'boot'. Adicione a seguinte linha em seu
+   script de inicialização:

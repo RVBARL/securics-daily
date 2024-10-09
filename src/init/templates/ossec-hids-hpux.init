@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# name: securics
+# purpose: Init script for Securics
+# Copyright (C) 2023-2024, RV Bionics Group SpA. <support@rvbionics.com>
+#
+
+SECURICS_HOME=SECURICS_HOME_TMP
+SECURICS_CONTROL="$SECURICS_HOME/bin/securics-control"
+
+case "$1" in
+start)
+    if [ -f "$SECURICS_CONTROL" ]; then
+        echo "Starting Securics"
+        ${SECURICS_CONTROL} start
+    fi
+    ;;
+stop)
+    if [ -f "$SECURICS_CONTROL" ]; then
+        echo "Stopping Securics"
+        ${SECURICS_CONTROL} stop
+    fi
+    ;;
+status)
+    if [ -f "$SECURICS_CONTROL" ]; then
+        ${SECURICS_CONTROL} status
+    fi
+    ;;
+restart)
+    if [ -f "$SECURICS_CONTROL" ]; then
+        ${SECURICS_CONTROL} restart
+    fi
+    ;;
+*)
+    echo "Usage: $0 (start | stop | restart | status)"
+    exit 1
+esac

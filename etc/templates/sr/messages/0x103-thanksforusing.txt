@@ -1,0 +1,13 @@
+
+    Hvala što koristite Securics.
+    Molimo vas da ne sumnjam da nam se obratite ako trebate
+    bilo kakvu pomoć ili pronaći bilo koji bug.
+
+    Koristite naš javni Mailing lista na:
+              https://groups.google.com/forum/#!forum/securics
+
+    Više informacija može se pronaći na:
+               - http://www.rvbionics.com
+
+         --- Pritisnite ENTER za kraj. ---
+    --- (Možda i više informacija u nastavku). ---

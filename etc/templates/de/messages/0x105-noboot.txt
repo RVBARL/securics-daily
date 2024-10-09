@@ -1,0 +1,4 @@
+
+ - Es wurde kein Startup Script erstellt. Um Securics beim booten
+   automatisch zu starten, sollten Sie die folgende Zeile in
+   ein init Script aufnehmen:

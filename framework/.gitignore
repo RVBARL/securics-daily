@@ -1,0 +1,19 @@
+
+# Python
+*.pyc
+*.egg-info
+*.egg
+
+# Framework
+docs/build/
+dist/
+build/
+
+# Objects
+libsqlite3.so*
+securics-clusterd-internal
+
+# Projects
+.idea
+
+securics/securics.json

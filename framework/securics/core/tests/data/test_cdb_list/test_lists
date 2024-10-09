@@ -1,0 +1,10 @@
+test-securics-w:write
+test-securics-r:read
+test-securics-a:attribute
+test-securics-x:execute
+test-securics-c:command
+test-key:"value:1"
+"test-key:1":value
+"test-key:2":"value:2"
+"test-key::::::3":value3
+test-key4:"value:::4"

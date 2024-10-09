@@ -1,0 +1,63 @@
+#!/sbin/runscript
+# Gentoo init script
+# Copyright (C) 2023-2024, RV Bionics Group SpA.
+# by gentuxx <gentuxx@gmail.com>
+
+opts="${opts} status configtest"
+
+SECURICS_HOME=SECURICS_HOME_TMP
+SECURICS_CONTROL="$SECURICS_HOME/bin/securics-control"
+
+depend() {
+    need net
+    use logger
+}
+
+configtest() {
+    ebegin "Checking Securics Configuration"
+    checkconfig
+    eend $?
+}
+
+checkconfig() {
+    CONFIGFILE="${CONFIGFILE:-$SECURICS_HOME/etc/ossec.conf}"
+    if [ ! -r "${CONFIGFILE}" ]; then
+        eerror "Unable to read configuration file: ${CONFIGFILE}"
+        return 1
+    fi
+
+    # Maybe put some kind of config file syntax checking in here?  XML is a little different
+    # so maybe not.
+    return $ret
+}
+
+start() {
+    checkconfig || return 1
+    ebegin "Starting Securics"
+    ${SECURICS_CONTROL} start > /dev/null 2>&1
+    eend $?
+}
+
+stop() {
+    checkconfig || return 1
+    ebegin "Stopping Securics"
+    ${SECURICS_CONTROL} stop > /dev/null 2>&1
+    eend $?
+}
+
+restart() {
+    if ! service_started "${myservice}" ; then
+        eerror "Securics is not running! Please start it before trying to reload it."
+    else
+        checkconfig || return 1
+        ebegin "Reloading Securics"
+        svc_stop ${SECURICS_CONTROL}
+        svc_start ${SECURICS_CONTROL}
+        eend $?
+    fi
+}
+
+status() {
+    checkconfig || return 1
+    ${SECURICS_CONTROL} status
+}

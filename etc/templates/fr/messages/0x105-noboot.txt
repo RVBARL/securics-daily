@@ -1,0 +1,4 @@
+
+ - Aucune action n'a été faite pour configurer Securics pour
+   démarrer lors du boot. Ajoutez la ligne suivante à votre script
+   d'initialisation :

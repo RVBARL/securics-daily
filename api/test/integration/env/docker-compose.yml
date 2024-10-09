@@ -1,0 +1,224 @@
+services:
+  securics-master:
+    profiles:
+      - standalone
+      - cluster
+    build:
+      context: .
+      dockerfile: base/manager/manager.Dockerfile
+    image: integration_test_securics-manager
+    hostname: securics-master
+    ports:
+      - "55000:55000"
+    volumes:
+      - ./configurations/tmp/manager:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - securics-master
+      - master-node
+      - master
+      - ${ENV_MODE}
+
+  securics-worker1:
+    profiles:
+      - cluster
+    image: integration_test_securics-manager
+    hostname: securics-worker1
+    volumes:
+      - ./configurations/tmp/manager:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - securics-master
+      - worker1
+      - worker
+    depends_on:
+      - securics-master
+
+  securics-worker2:
+    profiles:
+      - cluster
+    image: integration_test_securics-manager
+    hostname: securics-worker2
+    volumes:
+      - ./configurations/tmp/manager:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - securics-master
+      - worker2
+      - worker
+    depends_on:
+      - securics-master
+
+  securics-agent1:
+    profiles:
+      - standalone
+      - cluster
+    build:
+      context: .
+      dockerfile: base/agent/new.Dockerfile
+    image: integration_test_securics-agent
+    hostname: securics-agent1
+    volumes:
+      - ./configurations/tmp/agent:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - haproxy-lb
+      - securics-agent1
+    depends_on:
+      - haproxy-lb
+
+  securics-agent2:
+    profiles:
+      - standalone
+      - cluster
+    image: integration_test_securics-agent
+    hostname: securics-agent2
+    volumes:
+      - ./configurations/tmp/agent:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - haproxy-lb
+      - securics-agent2
+    depends_on:
+      - securics-agent1
+      - haproxy-lb
+
+  securics-agent3:
+    profiles:
+      - standalone
+      - cluster
+    image: integration_test_securics-agent
+    hostname: securics-agent3
+    volumes:
+      - ./configurations/tmp/agent:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - haproxy-lb
+      - securics-agent3
+    depends_on:
+      - securics-agent2
+      - haproxy-lb
+
+  securics-agent4:
+    profiles:
+      - standalone
+      - cluster
+    image: integration_test_securics-agent
+    hostname: securics-agent4
+    volumes:
+      - ./configurations/tmp/agent:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - haproxy-lb
+      - securics-agent4
+    depends_on:
+      - securics-agent3
+      - haproxy-lb
+
+  securics-agent5:
+    profiles:
+      - standalone
+      - cluster
+    build:
+      context: .
+      dockerfile: base/agent/old.Dockerfile
+    image: integration_test_securics-agent_old
+    hostname: securics-agent5
+    volumes:
+      - ./configurations/tmp/agent:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - haproxy-lb
+      - securics-agent5
+      - agent_old
+    depends_on:
+      - securics-agent4
+      - haproxy-lb
+
+  securics-agent6:
+    profiles:
+      - standalone
+      - cluster
+    image: integration_test_securics-agent_old
+    hostname: securics-agent6
+    volumes:
+      - ./configurations/tmp/agent:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - haproxy-lb
+      - securics-agent6
+      - agent_old
+    depends_on:
+      - securics-agent5
+      - haproxy-lb
+
+  securics-agent7:
+    profiles:
+      - standalone
+      - cluster
+    image: integration_test_securics-agent_old
+    hostname: securics-agent7
+    volumes:
+      - ./configurations/tmp/agent:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - haproxy-lb
+      - securics-agent7
+      - agent_old
+    depends_on:
+      - securics-agent6
+      - haproxy-lb
+
+  securics-agent8:
+    profiles:
+      - standalone
+      - cluster
+    image: integration_test_securics-agent_old
+    hostname: securics-agent8
+    volumes:
+      - ./configurations/tmp/agent:/tmp_volume
+      - ./tools/:/tools
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - haproxy-lb
+      - securics-agent8
+      - agent_old
+    depends_on:
+      - securics-agent7
+      - haproxy-lb
+
+  haproxy-lb:
+    profiles:
+      - standalone
+      - cluster
+    build:
+      context: ./base/haproxy-lb
+    image: integration_test_haproxy-lb
+    entrypoint:
+      - /scripts/entrypoint.sh
+      - ${ENV_MODE}
+    depends_on:
+      - securics-master
+      - securics-worker1
+      - securics-worker2
+
+  cti:
+    profiles:
+      - standalone
+      - cluster
+    build:
+      context: ./base/cti
+    image: integration_test_cti
+    restart: always
+    environment:
+      - PORT=4041

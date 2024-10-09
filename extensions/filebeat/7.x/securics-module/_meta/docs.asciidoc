@@ -1,0 +1,26 @@
+:modulename: securics
+:has-dashboards: false
+
+== Securics module
+
+This module prepares Elasticsearch for ingesting Securics alerts and, optionally, Securics archives.
+
+include::../include/what-happens.asciidoc[]
+
+[float]
+=== Compatibility
+
+Compatible with Securics 3.x and Elastic stack 7.x. The module was tested with Securics 3.9 and Elastic stack 7.2. 
+
+include::../include/running-modules.asciidoc[]
+
+[float]
+==== `{fileset}` log fileset settings
+
+include::../include/var-paths.asciidoc[]
+
+:has-dashboards!:
+
+:fileset_ex!:
+
+:modulename!:

@@ -1,0 +1,9 @@
+securics-manager: embedded-library
+securics-manager: embedded-zlib
+securics-manager: possible-gpl-code-linked-with-openssl
+securics-manager: new-package-should-close-itp-bug
+securics-manager: possibly-insecure-handling-of-tmp-files-in-maintainer-script
+securics-manager: non-standard-dir-in-var
+securics-manager: file-in-unusual-dir
+securics-manager: hardening-no-fortify-functions
+securics-manager: hardening-no-relro

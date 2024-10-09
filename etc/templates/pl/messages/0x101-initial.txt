@@ -1,0 +1,3 @@
+
+ Rozpoczynasz proces instalacji programu Securics.
+ Aby kontynuować musisz mieć zainstalowany kompilator C.

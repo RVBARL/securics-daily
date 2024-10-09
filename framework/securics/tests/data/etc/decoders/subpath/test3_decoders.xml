@@ -1,0 +1,50 @@
+<!--
+  -  Securics decoders
+  -  Created by Securics, Inc.
+  -  Copyright (C) 2023-2024, RV Bionics Group SpA.
+  -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
+-->
+<!-- DECODER IN USER_DECODERS_PATH/subpath -->
+
+<decoder name="securics">
+  <prematch>^securics: </prematch>
+</decoder>
+
+<decoder name="agent-buffer">
+  <parent>securics</parent>
+  <prematch offset="after_parent">^Agent buffer:</prematch>
+  <regex offset="after_prematch">^ '(\S+)'.</regex>
+  <order>level</order>
+</decoder>
+
+<decoder name="agent-upgrade">
+  <parent>securics</parent>
+  <prematch offset="after_parent">^Upgrade procedure |^Custom installation </prematch>
+  <regex offset="after_prematch">on agent (\d\d\d)\s\((\S+)\):\s(\w+)</regex>
+  <order>agent.id, agent.name, status</order>
+</decoder>
+
+<decoder name="agent-upgrade">
+  <parent>securics</parent>
+  <regex>aborted:\s(\.+)$|failed:\s(\.+)$|lost:\s(\.+)$</regex>
+  <order>error</order>
+</decoder>
+
+<decoder name="agent-upgrade">
+  <parent>securics</parent>
+  <regex>started.\sCurrent\sversion:\sSecurics\s(\.+)$</regex>
+  <order>agent.cur_version</order>
+</decoder>
+
+<decoder name="agent-upgrade">
+  <parent>securics</parent>
+  <regex>succeeded.\sNew\sversion:\sSecurics\s(\.+)$</regex>
+  <order>agent.new_version</order>
+</decoder>
+
+<decoder name="agent-restart" test_tag="test">
+  <parent>securics</parent>
+  <prematch offset="after_parent">^Invalid remote configuration:</prematch>
+  <regex offset="after_prematch">^ '(\S+)'.</regex>
+  <order>module</order>
+</decoder>

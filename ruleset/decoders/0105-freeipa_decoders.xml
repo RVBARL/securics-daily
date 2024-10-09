@@ -1,0 +1,10 @@
+<!--
+  -  FreeIPA decoders
+  -  Created by Securics, Inc.
+  -  Copyright (C) 2023-2024, RV Bionics Group SpA.
+  -  This program is a free software; you can redistribute it and/or modify it under the terms of GPLv2.
+-->
+
+<decoder name="freeipa">
+    <program_name>ipa</program_name>
+</decoder>

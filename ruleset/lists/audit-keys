@@ -1,0 +1,5 @@
+audit-securics-w:write
+audit-securics-r:read
+audit-securics-a:attribute
+audit-securics-x:execute
+audit-securics-c:command

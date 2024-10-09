@@ -1,0 +1,20 @@
+- name: REMOTED_ENDPOINT
+  description: remoted statistics endpoint
+  configuration_parameters:
+    ENDPOINT: securics-remoted
+  metadata:
+    endpoint: securics-remoted
+
+- name: ANALYSISD_ENDPOINT
+  description: analysisd statistics endpoint
+  configuration_parameters:
+    ENDPOINT: securics-analysisd
+  metadata:
+    endpoint: securics-analysisd
+
+- name: SECURICS_DB_ENDPOINT
+  description: securics-db statistics endpoint
+  configuration_parameters:
+    ENDPOINT: securics-db
+  metadata:
+    endpoint: securics-db
